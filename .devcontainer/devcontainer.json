@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-docker-compose
+{
+	"name": "lma-rma-ros2-devcontainer",
+	"dockerComposeFile": [
+		"../compose.yaml",
+		"compose.yaml"
+	],
+	"service": "lma_rma_environment_ros2_jazzy",
+	"workspaceFolder": "/persistent",
+	// Extensions for
+	// * Cpp
+	// * Cmake
+	// * Python
+	// * QoL
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"C_Cpp.intelliSenseEngine": "default"
+			},
+			"extensions": [
+				"aaron-bond.better-comments",
+				"charliermarsh.ruff",
+				"jeff-hykin.better-cpp-syntax",
+				"josetr.cmake-language-support-vscode",
+				"ms-dotnettools.vscode-dotnet-runtime",
+				"ms-iot.vscode-ros",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-vscode.cmake-tools",
+				"ms-vscode.cpptools",
+				"nonanonno.vscode-ros2",
+				"twxs.cmake",
+				"usernamehw.errorlens"
+			]
+		}
+	}
+}

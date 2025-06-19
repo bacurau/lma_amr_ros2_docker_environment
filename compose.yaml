@@ -1,0 +1,33 @@
+services:
+  lma_rma_environment_ros2_jazzy:
+    build:
+      context: .
+      args:
+        DOCKER_USER: ${DOCKER_USER}
+    image: "lma_rma_ros2_jazzy:latest"
+    volumes:
+      - ./persistent:/persistent
+      - /dev:/dev # For ROS
+      # This allows forwarding of X11 from inside the container over SSH
+      # https://stackoverflow.com/a/71874534
+      - $HOME/.Xauthority:/home/${DOCKER_USER}/.Xauthority:rw
+
+    env_file:
+      - .env
+
+    # ROS 2 flags
+    # This shares the host network with the container.
+    network_mode: "host" # The same as using --net=host in docker build
+    privileged: true
+
+    # For building containers that will be accessed via ssh:
+    # user: "root"
+    # ports:
+    #   - "2222:22"
+    # command: "/usr/sbin/sshd -D -p 2222"
+
+    # For building interactive containers
+    user: ${DOCKER_USER} # Configure the user of the container
+    stdin_open: true # Same as the flag `-i` in docker run
+    tty: true # Same as the flag `-t` in docker run
+    command: "/bin/bash" # Starting shell

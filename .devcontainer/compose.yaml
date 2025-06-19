@@ -1,0 +1,10 @@
+services:
+  lma_rma_environment_ros2_jazzy:
+    env_file:
+      - .env
+    # This is an override, it doesn't make sense to do anything not interactive
+    # for a devcontainer.
+    user: ${DOCKER_USER} # Configure the user of the container
+    stdin_open: true # Same as the flag `-i` in docker run
+    tty: true # Same as the flag `-t` in docker run
+    command: "/bin/bash" # Starting shell

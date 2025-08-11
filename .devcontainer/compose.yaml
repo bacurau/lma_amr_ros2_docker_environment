@@ -7,4 +7,3 @@ services:
     user: ${DOCKER_USER} # Configure the user of the container
     stdin_open: true # Same as the flag `-i` in docker run
     tty: true # Same as the flag `-t` in docker run
-    command: "/bin/bash" # Starting shell

@@ -6,6 +6,9 @@
 		"../compose.yaml",
 		"compose.yaml"
 	],
+	"containerEnv": {
+		"SHELL": "/bin/bash" // Starting shell
+	},
 	"service": "lma_rma_environment_ros2_jazzy",
 	"workspaceFolder": "/persistent",
 	// Extensions for

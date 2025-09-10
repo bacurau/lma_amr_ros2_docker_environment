@@ -1,3 +1,4 @@
+# Remember to use docker as a non-root user: https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
 services:
   lma_rma_environment_ros2_jazzy:
     build:
@@ -31,3 +32,11 @@ services:
     stdin_open: true # Same as the flag `-i` in docker run
     tty: true # Same as the flag `-t` in docker run
     command: "/bin/bash" # Starting shell
+
+    # This is needed for gazebo to work with nvidia gpu. If you don't have a nvidia gpu, comment this line.
+    # More information on this issue can be found at https://github.com/gazebosim/gz-sim/issues/3024#event-19275228460.
+    # Also, you might need to download the nvidia container toolkit, https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt.
+    runtime: nvidia 
+
+
+

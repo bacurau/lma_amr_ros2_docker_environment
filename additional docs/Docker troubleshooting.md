@@ -17,6 +17,14 @@ If that doesn't work you can try cleaning everything docker related from your co
 ``` bash
 docker system prune --all
 ```
+> [!CAUTION]
+> After installing docker desktop, the docker did not work anymore, and even after removing it (https://docs.docker.com/desktop/uninstall/), the docker build still did not work.
+> Only do this if you have nothing to lose and do not want do remove docker: remove the ~/.docker folder, this will erase your docker configurations. When you build the docker again it will recreate this folder with the default configurations. I recommend using this only if you have removed everything with prune and it still not worked. This links explains what is the ~/.docker folder: https://docs.docker.com/reference/cli/docker/?utm_source=chatgpt.com. 
+
+``` bash
+rm -rf ~/.docker
+```
+
 
 ## Debugging the docker image
 

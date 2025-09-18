@@ -1,6 +1,6 @@
 # lma_amr_ros2_docker_environment
 
-This repository contains a development environment for software development with ROS2 for the LMA laboratory. This should provide a unified and fast setup development environment for its rma.
+This repository contains a development environment for software development with ROS2 for the LMA laboratory. This should provide a unified and fast setup development environment for its amr.
 
 ## Prerequisites
 

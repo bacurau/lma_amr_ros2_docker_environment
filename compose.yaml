@@ -29,6 +29,8 @@ services:
 
     # For building interactive containers
     user: ${DOCKER_USER} # Configure the user of the container
+    group_add:
+      - dialout # Add by group name
     stdin_open: true # Same as the flag `-i` in docker run
     tty: true # Same as the flag `-t` in docker run
     command: "/bin/bash" # Starting shell
@@ -37,6 +39,14 @@ services:
     # More information on this issue can be found at https://github.com/gazebosim/gz-sim/issues/3024#event-19275228460.
     # Also, you might need to download the nvidia container toolkit, https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt.
     runtime: nvidia 
+
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
 
 
 

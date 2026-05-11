@@ -10,6 +10,7 @@ It's expected that the user of this repository already has the following prerequ
 * Docker.
 * Docker compose.
 * Docker buildx (this usually comes with Docker, but may need separate installation on older distributions).
+* The [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt)
 * VSCode (Visual Studio Code) (Although using another IDE and accessing the container via SSH is supported, see [Using another IDE](additional%20docs/Using%20another%20IDE.md)).
 * Docker extension for VSCode (Inside VSCode press `ctrl+p` and paste `ext install ms-azuretools.vscode-docker`).
 * Dev Container extension for VSCode (Inside VSCode press `ctrl+p` and paste `ext install ms-vscode-remote.remote-containers`).

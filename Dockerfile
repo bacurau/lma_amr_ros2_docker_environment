@@ -22,6 +22,10 @@ RUN <<EOF
     # Install stlink tools for STM32 board reset.
     apt-get -y install --no-install-recommends stlink-tools
 
+    # Installing other useful ROS2 packages.
+    apt-get -y install --no-install-recommends \
+        ros-jazzy-rqt-tf-trees
+
     # Installing gazebo and necessary tools.
     curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list >/dev/null
@@ -51,6 +55,7 @@ apt-get install -y --no-install-recommends \
     fzf \
     htop \
     less \
+    python3-venv \
     stow \
     tmux \
     x11-apps \

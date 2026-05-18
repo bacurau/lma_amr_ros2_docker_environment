@@ -22,18 +22,23 @@
 				"C_Cpp.intelliSenseEngine": "default"
 			},
 			"extensions": [
-				"aaron-bond.better-comments",
-				"charliermarsh.ruff",
-				"jeff-hykin.better-cpp-syntax",
-				"josetr.cmake-language-support-vscode",
-				"ms-dotnettools.vscode-dotnet-runtime",
-				"ms-iot.vscode-ros",
+				// Cpp
+				"jeff-hykin.better-cpp-syntax", // Just niceties.
+				"ms-vscode.cpptools", // This is what the ROS2 ecosystem expects, even if clangd would have been a better option.
+				// Cmake
+				"josetr.cmake-language-support-vscode", // Adds better completion for commands in CMAKE.
+				"ms-dotnettools.vscode-dotnet-runtime", // Dependency of the ms cmake extension.
+				"ms-vscode.cmake-tools", // This is somewhat bare bones even if its the "oficial" one.
+				// Python
+				"charliermarsh.ruff", // Our defined Python formatter.
 				"ms-python.python",
 				"ms-python.vscode-pylance",
-				"ms-vscode.cmake-tools",
-				"ms-vscode.cpptools",
+				// ROS2
 				"nonanonno.vscode-ros2",
-				"twxs.cmake",
+				"Ranch-Hand-Robotics.rde-ros-2",
+				"Ranch-Hand-Robotics.urdf-editor",
+				// QoL
+				"aaron-bond.better-comments",
 				"usernamehw.errorlens"
 			]
 		}

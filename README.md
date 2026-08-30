@@ -20,16 +20,20 @@ It's expected that the user of this repository already has the following prerequ
 > [!NOTE]
 > This steps only need to be executed on the first time.
 
-Everything inside the folder `persistent` will be visible from inside the container and will be persistent across reboots. So in the root of this repository clone the source code as instructed:
+Create a folder named `persistent` in the root of this repository. Anything inside of it will be accessible from inside the container, and as its name implies, will persist after the the container has been stopped, this is the intended "workspace" folder for this workflow, and can be used to move files from outside the container into it, and vice versa.
+
+So the recommended workflow is to enter the directory and clone the robot source code into it:
 
 ```bash
-git clone --recurse-submodules -b <branch> <repository url> persistent
+mkdir -p persistent
+cd persistent
+git clone --recurse-submodules -b <branch> <repository url>
 ```
 
 Replace `<branch>` with the desired branch name and `<repository url>` with the actual repository URL (not to be confused with the site URL).
 
 > [!WARNING]
-> This is a container, which means that everything inside of it is transient, this means that if you install a package via terminal, or do any kind of configuration, after a container reboot these changes will be lost.
+> This is a container, which means that everything inside of it is transient (with the exception of the persistent directory), this means that if you install a package via terminal, or do any kind of configuration, after a container reboot these changes will be lost.
 
 ## Using the container
 

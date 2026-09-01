@@ -38,15 +38,13 @@ services:
     # This is needed for gazebo to work with nvidia gpu. If you don't have a nvidia gpu, comment this line.
     # More information on this issue can be found at https://github.com/gazebosim/gz-sim/issues/3024#event-19275228460.
     # Also, you might need to download the nvidia container toolkit, https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-with-apt.
-    runtime: nvidia 
 
+    runtime: nvidia
+    # More modern syntax for GPU, may not work with older versions of compose.
     # deploy:
     #   resources:
     #     reservations:
     #       devices:
     #         - driver: nvidia
     #           count: all
-    #           capabilities: [gpu]
-
-
-
+    #           capabilities: [ gpu ]

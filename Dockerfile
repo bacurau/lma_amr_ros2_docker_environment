@@ -35,6 +35,9 @@ RUN <<EOF
         gz-harmonic
 EOF
 
+# This is required for detection of which version of gazebo will be used.
+ENV GZ_VERSION="harmonic"
+
 # Configuring for access via SSH, this is only needed if accessing the
 # container without VSCode.
 RUN <<EOF

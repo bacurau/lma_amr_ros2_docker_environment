@@ -35,8 +35,12 @@ RUN <<EOF
         gz-harmonic
 EOF
 
+# Configure environment variables
+
 # This is required for detection of which version of gazebo will be used.
 ENV GZ_VERSION="harmonic"
+# Set the domain ID to the same value as the one used in our embedded firmware.
+ENV ROS_DOMAIN_ID=25
 
 # Configuring for access via SSH, this is only needed if accessing the
 # container without VSCode.

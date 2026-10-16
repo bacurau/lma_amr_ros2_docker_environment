@@ -25,6 +25,18 @@ docker system prune --all
 rm -rf ~/.docker
 ```
 
+## Error: additional privileges requested: pass "--allow=fs.read=/tmp/devcontainercli-root/container-features/0.88.0-1791313415507/Dockerfile-with-features" to grant requested privileges
+
+Your message might be slight different, as it depends on your system and configuration.
+
+**Solution:**
+
+```
+export BUILDX_BAKE_ENTITLEMENTS_FS=0
+code .
+```
+Source: https://github.com/microsoft/vscode-remote-release/issues/11896
+
 
 ## Debugging the docker image
 
